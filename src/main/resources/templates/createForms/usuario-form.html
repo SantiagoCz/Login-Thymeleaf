@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<main class="registro" th:fragment="content">
+    <!-- seccion de registro de usuario -->
+    <section class="registro" id="registro">
+        <h3>Registro</h3>
+        <form id="registroForm" th:object="${usuario}" th:action="@{/usuario/guardar}" method="post">
+            <label for="dni-registro">
+                <span>DNI</span>
+                <input type="text" id="dni-registro" name="persona.dni" th:field="*{persona.dni}" required pattern="[0-9]{8}" title="Ingrese un número de DNI válido de 8 dígitos">
+            </label>
+            <label for="name">
+                <span>Nombre</span>
+                <input type="text" id="name" name="persona.nombre" autocomplete="name" th:field="*{persona.nombre}" required pattern="[A-Za-z\s]+" title="Ingrese solo letras y espacios">
+            </label>
+            <label for="surname">
+                <span>Apellido</span>
+                <input type="text" id="surname" name="persona.apellido" autocomplete="family-name" th:field="*{persona.apellido}" required pattern="[A-Za-z\s]+" title="Ingrese solo letras y espacios">
+            </label>
+            <label for="telefono">
+                <span>Teléfono</span>
+                <input type="tel" id="telefono" name="persona.telefono" th:field="*{persona.telefono}" required pattern="[0-9]{1,11}" title="Ingrese un número de teléfono válido de hasta 11 dígitos">
+            </label>
+            <label for="fechaNacimiento">
+                <span>Nac.:</span>
+                <input type="date" id="fechaNacimiento" name="persona.fechaNacimiento" th:field="*{persona.fechaNacimiento}" required>
+            </label>
+            <label for="password">
+                <span>Contraseña</span>
+                <input type="password" id="password" name="usuario.contrasenia" th:field="*{usuario.contrasenia}" required>
+            </label>
+
+            <button class="action" type="submit">Ingresar</button>
+        </form>
+    </section>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script th:src="@{/js/ubicacion.js}"></script>
+<script th:src="@{/js/prueba.js}"></script>-
+<script th:src="@{/js/alerta.js}"></script>
+</html>

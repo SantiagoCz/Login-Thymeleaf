@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<main class="login" th:fragment="content">
+    <!-- seccion de login -->
+    <section class="login" id="login">
+        <h3>Login</h3>
+        <form method="POST" th:action="@{/logincheck}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <label for="dni">
+                <span>DNI</span>
+                <input type="text" id="dni" name="dni" required>
+            </label>
+            <label for="contrasenia">
+                <span>Contraseña</span>
+                <input type="password" id="contrasenia" name="contrasenia" required>
+            </label>
+            <button class="action" type="submit">Ingresar</button>
+            <span><a href="#">¿Olvidaste tu contraseña?</a></span>
+            <span><a href="/usuario/nuevo">¿No estas registrado?</a></span>
+        </form>
+    </section>
+</main>
+<script th:src="@{/js/login.js}"></script>
+</html>

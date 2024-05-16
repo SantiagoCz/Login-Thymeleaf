@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<main class="registro-noticia" th:fragment="content">
+    <!-- seccion de registro institucion -->
+    <section class="registro-noticia" id="registro-noticia">
+        <h3>Redactar contenido:</h3>
+        <form id="registroForm" th:object="${noticia}" th:action="@{/noticia/guardar}" method="post" enctype="multipart/form-data">
+
+            <label for="Titulo">
+                <span>Título</span>
+                <input type="text" id="titulo" name="titulo" th:field="*{titulo}" required>
+            </label>
+
+            <label for="subtitulo">
+                <span>Subtítulo</span>
+                <input type="text" id="subtitulo" name="subtitulo" th:field="*{subtitulo}" required>
+            </label>
+
+            <label for="cuerpo">
+                <span>Cuerpo</span>
+                <textarea type="text" id="cuerpo" name="cuerpo" th:field="*{cuerpo}" required></textarea>
+            </label>
+
+            <label for="archivo">
+                <span>Subir foto</span>
+                <input type="file" id="archivo" name="archivo" accept="image/*" required>
+            </label>
+
+            <button class="action" type="submit">Registrar</button>
+        </form>
+    </section>
+</main>

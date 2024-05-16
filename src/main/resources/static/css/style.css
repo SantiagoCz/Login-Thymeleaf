@@ -1,0 +1,263 @@
+:root {
+    --color-primario: #005288;
+    --color-secundario:#D93232;
+    --color-blanco:#FBFCFC;
+    --color-negro:#07051A;
+    --font-family:'Poppins', sans-serif;
+}
+  
+* {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: var(--font-family);
+    color: var(--color-negro);
+}
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+    transition: opacity 5s ease-in-out;
+  }
+  
+  /* Estilo del pulgar de la barra de desplazamiento */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-primario); /* Color del pulgar */
+  }
+  
+  /* Estilo de la pista de la barra de desplazamiento */
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color de la pista */
+  }
+
+/* Prefijos específicos para Edge */
+::-ms-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  ::-ms-thumb {
+    background-color: var(--color-primario); /* Color del pulgar */
+  }
+  
+  ::-ms-track {
+    background-color: #f1f1f1; /* Color de la pista */
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Altura mínima del viewport */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-blanco);
+}
+
+/*-----------------header-----------------*/
+header{
+    position: sticky;
+    top: 0; /* Fija el header en la parte superior */
+    display: flex;
+    justify-content: space-between;
+    min-height: 100%;
+    background-color:var(--color-primario) ;
+    outline: none;
+}
+
+header picture{
+    display: flex;
+    width: 100%;
+}
+header img{
+    height: 6em;
+    padding-left: 1em;
+    align-self: center;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0%;
+    padding: 0%;
+}
+header button{
+    font-size: 320%;
+    padding: 0.5em;
+    font-weight: bolder;
+    background-color: transparent;
+    border:none;
+    color: #FFFF;
+}
+
+header ul{
+    display: none;
+}
+
+/* ---------menu desplegable----------- */
+.menu {
+    width: 200px;
+    height: 100%;
+    background-color: var(--color-negro);
+    position: fixed;
+    top: 0;
+    right: -200px; /* Menú oculto por defecto */
+    transition: right 0.5s ease; /* Transición suave */
+  }
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    padding: 10px;
+    padding-bottom: 15px;
+  }
+  
+  .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+  }
+
+/*------sections del main------------*/
+main{
+    height:fit-content;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+main section{
+    width: 100%;
+    padding: 1em;
+    font-size: 1.6rem;
+    margin: 1.5em;
+    border: 2px solid var(--color-primario);
+    border-radius: 10px;
+}
+
+main section form{
+    display:flex;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+main section h3{
+    font-size: 2.5rem;
+    padding: 0.2em;
+    border-bottom: 2px solid var(--color-secundario) ;
+}
+main section form label{
+    padding-bottom: 0.5em;
+    display: flex;
+}
+main section form label span{
+    width: 6em;
+}
+
+main section form label input{
+    width: 70%;
+    border:1px solid var(--color-primario);
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+main section form label input:focus{
+    outline: none;
+    border: 2px solid var(--color-secundario)
+}
+
+.action{
+    border: 2px solid var(--color-primario);
+    background-color: var(--color-blanco);
+    width: 8em;
+    padding: 0.1em;
+    border-radius: 5px;
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    font-family:var(--font-family);
+}
+
+.action:hover{
+    border-color: var(--color-secundario);
+}
+
+/* ----------footer----------- */
+footer{
+    margin-top: auto;
+    width: 100%;
+    background-color: var(--color-secundario);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h3{
+    left: 25%;
+    color: var(--color-blanco);
+    font-size: 3.0rem;
+}
+footer img{
+    height: 6em;
+    padding-left: 1em;
+    align-self: center;
+}
+
+footer form{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer form label{
+    padding: 0.5em;
+    display: flex;
+    align-items:center;
+    width: 80vw;
+}
+footer form input{
+    border-radius: 5px;
+    border: 1px solid var(--color-blanco);
+    padding: 0.5em; /* Agrega sangría de 10px en todos los lados del input */
+    box-sizing: border-box; /* Hace que el ancho del texto incluya el padding y el borde */
+    width: 100%; /* Ajusta el ancho del input al 100% del contenedor */
+    font-family: var(--font-family);
+    font-weight: 600;
+    
+}
+
+footer form input:focus{
+    outline: none;
+    border: 2px solid var(--color-secundario)
+}
+
+footer form textarea{
+    border-radius: 5px;
+    border: 1px solid var(--color-blanco);
+    padding: 0.5em; /* Agrega sangría de 10px en todos los lados del input */
+    box-sizing: border-box; /* Hace que el ancho del texto incluya el padding y el borde */
+    width: 100%; /* Ajusta el ancho del input al 100% del contenedor */
+    font-family: var(--font-family);
+    font-weight: 600;
+    resize: none;
+}
+
+footer form textarea:focus{
+    outline: none;
+    border: 2px solid var(--color-secundario)
+}
+
+#motivo{
+    height: 8rem;
+}
+
+

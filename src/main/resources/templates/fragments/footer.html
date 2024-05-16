@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- footer -->
+    <footer th:fragment="footer">
+        <picture>
+            <img th:src="@{/imagenes/ministerioDeporte.png}" alt="Logo ministerio de deporte"/>
+        </picture>
+        <h3>Contactanos</h3>
+        <form action="">
+            <label for="email">
+                <input type="email" id="email" name="email_contact" autocomplete="email" placeholder="Email"
+                       required>
+            </label>
+            <label for="name_contact">
+                <input type="text" id="name_contact" name="name_contact" autocomplete="name"
+                       placeholder="Nombre y Apellido" required>
+            </label>
+            <label for="motivo">
+                <textarea type="text" id="motivo" name="motivo" placeholder="Motivo" required></textarea>
+            </label>
+            <button class="action" type="submit" id="enviar-contacto">Enviar</button>
+        </form>
+
+    </footer>
+</html>

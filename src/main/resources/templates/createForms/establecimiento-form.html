@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<main class="registro-instituto" th:fragment="content">
+    <!-- seccion de registro institucion -->
+    <section class="registro-instituto" id="registro-insti">
+        <h3>Registro de Instituto</h3>
+        <form id="registroForm" th:object="${establecimiento}" th:action="@{/establecimiento/guardar}" method="post">
+            <label for="cuit">
+                <span>CUIT</span>
+                <input type="text" id="cuit" name="cuit" th:field="*{cuit}" required pattern="[0-9]{11}" title="Ingrese un número de CUIT válido de 11 dígitos, sin guiones (-)">
+            </label>
+            <label for="nombre">
+                <span>Nombre</span>
+                <input type="text" id="nombre" name="nombre" th:field="*{nombre}" required>
+            </label>
+            <label for="localidad">
+                <span>Localidad</span>
+                <select id="localidad" name="localidad" title="Seleccione una Ciudad/Localidad">
+                    <option value="" disabled="disabled" selected="selected">--Seleccione una Ciudad/Localidad--</option>
+                    <option th:each="localidad : ${localidades}" th:value="${localidad.id}" th:text="${localidad.nombre}" th:selected="${establecimiento.localidad != null && localidad.id == establecimiento.localidad.id}" />
+                </select>
+            </label>
+            <label for="calle">
+                <span>Calle</span>
+                <input type="text" id="calle" name="calle" th:field="*{calle}" required>
+            </label>
+            <label for="numero">
+                <span>Numeración</span>
+                <input type="text" id="numero" name="numero" th:field="*{numeroCalle}" required pattern="[0-9]{1,6}" title="Ingrese un número válido">
+            </label>
+            <label for="telefono">
+                <span>Teléfono</span>
+                <input type="telono" id="telefono" name="telefono" th:field="*{telefono}" required pattern="[0-9]{1,11}" title="Ingrese un número de teléfono válido de hasta 11 dígitos">
+            </label>
+            <label for="email">
+                <span>Mail</span>
+                <input type="email" id="email" name="emailo" autocomplete="email" required>
+            </label>
+            <button class="action" type="submit">Registrar</button>
+        </form>
+    </section>
+</main>
+<script th:if="${alertScript}" th:src="@{/js/alerta.js}"></script>
+</html>
